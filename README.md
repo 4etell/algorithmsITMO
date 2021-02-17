@@ -1,2 +1,2 @@
 # algorithmsITMO
-ITMO University Programming algorithms and data structures Course
+Course of ITMO University Programming algorithms and data structures

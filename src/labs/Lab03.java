@@ -6,13 +6,14 @@ public class Lab03 {
     public static void main(String[] args) {
         try (EdxIO io = EdxIO.create()) {
 
-            String firstOutputString = "1 ";
             int n = io.nextInt();
             int[] array = new int[n];
 
             for (int i = 0; i < n; i++) {
                 array[i] = io.nextInt();
             }
+
+            io.print(1 + " ");
 
             for (int j = 1; j < n; j++) {
                 int k = 0;
@@ -22,11 +23,14 @@ public class Lab03 {
                     i--;
                     k++;
                 }
-                firstOutputString += j - k + 1 + " ";
+                io.print(j - k + 1 + " ");
             }
 
-            io.println(firstOutputString.replaceFirst(".$", ""));
-            io.print(arrayToString(array));
+            io.println();
+
+            for (int item : array) {
+                io.print(item + " ");
+            }
         }
     }
 
@@ -34,13 +38,5 @@ public class Lab03 {
         int temp = array[firstNum];
         array[firstNum] = array[secondNum];
         array[secondNum] = temp;
-    }
-
-    private static String arrayToString(int[] array) {
-        String stringArray = "";
-        for (int j : array) {
-            stringArray += j + " ";
-        }
-        return (stringArray.replaceFirst(".$", ""));
     }
 }

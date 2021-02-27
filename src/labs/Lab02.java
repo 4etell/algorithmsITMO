@@ -11,7 +11,7 @@ public class Lab02 {
             BigInteger firstNum = BigInteger.valueOf(io.nextInt());
             BigInteger secondNum = BigInteger.valueOf(io.nextInt());
 
-            io.println(""+firstNum.add(secondNum.multiply(secondNum)));
+            io.println("" + firstNum.add(secondNum.multiply(secondNum)));
         }
     }
 

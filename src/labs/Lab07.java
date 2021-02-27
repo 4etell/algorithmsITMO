@@ -19,12 +19,12 @@ public class Lab07 {
 
         mergeSort(array, n);
 
-        io.print(""+ count);
+        io.print("" + count);
         io.close();
     }
 
-    public static void merge(int[] array, int[] leftArray,
-                             int[] rightArray, int leftArrayLength, int rightArrayLength) {
+    private static void merge(int[] array, int[] leftArray,
+                              int[] rightArray, int leftArrayLength, int rightArrayLength) {
         int i = 0, j = 0, k = 0;
         while (i < leftArrayLength && j < rightArrayLength) {
             if (leftArray[i] <= rightArray[j]) {

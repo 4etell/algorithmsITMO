@@ -1,4 +1,5 @@
 package labs;
+
 import mooc.*;
 
 public class Lab01 {

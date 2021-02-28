@@ -21,7 +21,7 @@ public class Lab06 {
         io.close();
     }
 
-    private static void merge(int[] arr, int leftIdx, int midIdx, int rightIdx) {
+    private static void merge(int[] array, int leftIdx, int midIdx, int rightIdx) {
 
         int leftArrayLength = midIdx - leftIdx + 1;
         int rightArrayLength = rightIdx - midIdx;
@@ -31,41 +31,41 @@ public class Lab06 {
         int[] rightArray = new int[rightArrayLength];
 
         for (i = 0; i < leftArrayLength; ++i)
-            leftArray[i] = arr[leftIdx + i];
+            leftArray[i] = array[leftIdx + i];
         for (j = 0; j < rightArrayLength; ++j)
-            rightArray[j] = arr[midIdx + 1 + j];
+            rightArray[j] = array[midIdx + 1 + j];
 
         i = 0;
         j = 0;
 
         while (i < leftArrayLength && j < rightArrayLength) {
             if (leftArray[i] <= rightArray[j]) {
-                arr[k++] = leftArray[i++];
+                array[k++] = leftArray[i++];
             } else {
-                arr[k++] = rightArray[j++];
+                array[k++] = rightArray[j++];
             }
         }
 
         while (i < leftArrayLength) {
-            arr[k++] = leftArray[i++];
+            array[k++] = leftArray[i++];
         }
 
         while (j < rightArrayLength) {
-            arr[k++] = rightArray[j++];
+            array[k++] = rightArray[j++];
         }
 
-        io.println((leftIdx + 1) + " " + (rightIdx + 1) + " " + arr[leftIdx] + " " + arr[rightIdx]);
+        io.println((leftIdx + 1) + " " + (rightIdx + 1) + " " + array[leftIdx] + " " + array[rightIdx]);
     }
 
 
-    private static void mergeSort(int[] arr, int leftIdx, int rightIdx) {
+    private static void mergeSort(int[] array, int leftIdx, int rightIdx) {
         if (leftIdx < rightIdx) {
             int midIdx = leftIdx + (rightIdx - leftIdx) / 2;
 
-            mergeSort(arr, leftIdx, midIdx);
-            mergeSort(arr, midIdx + 1, rightIdx);
+            mergeSort(array, leftIdx, midIdx);
+            mergeSort(array, midIdx + 1, rightIdx);
 
-            merge(arr, leftIdx, midIdx, rightIdx);
+            merge(array, leftIdx, midIdx, rightIdx);
         }
     }
 }
